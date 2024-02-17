@@ -1,0 +1,148 @@
+@import "./main.scss";
+
+.home {
+    height: 100%;
+    display: block;
+    
+    
+    .introduction {
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        padding: 20vh 20rem;
+        min-height: 100%;
+
+        @include respond(tab-land) {
+            padding: 20vh 7.5rem;
+        }
+
+        @include respond(tab-port) {
+            padding: 20vh 5rem;
+        }
+
+        @include respond(phone) {
+            height: 130vh;
+            padding: 20vh 1rem;
+        }
+
+        .banner {
+            margin-bottom: 5em;
+            width: 60%;
+
+            @include respond(tab-port) {
+                width: 70%;
+            }
+    
+            @include respond(phone) {
+                width: 80%;
+            }
+
+            .title {
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .subtitle {
+                padding: 1em 0em;
+                font-family: "HedvigLettersSerif";
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+
+        .videoContainer {
+            max-width: 800px;
+            padding: 0px;
+            box-sizing: border-box;
+
+            .video {
+                width: 100%;
+                z-index: 1;
+                border-radius: 5px;
+            }
+        }
+    }
+
+}
+
+.marqueeContainer {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 60px;
+    left: 0%;
+    background-color: #efeee6;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+
+    .marquee {
+        position: absolute;
+        display: block;
+        white-space: nowrap;
+        min-width: 100%;
+        height: 100%;
+
+        span {
+            display: inline-block;
+            padding-left: 100%;
+            text-align: center;
+            white-space: nowrap;
+            min-width: 100%;
+            height: 100%;
+            font-size: 20px;
+            animation: marquee 10s linear infinite;
+            display: flex;
+            align-items: center;
+
+            @include respond(tab-land) {
+            }
+    
+            @include respond(tab-port) {
+                animation: marqueePhone 12s linear infinite;
+            }
+    
+            @include respond(phone) {
+                animation: marqueePhone 14s linear infinite;
+            }
+    
+        }
+    }
+
+    .delay {
+        span {
+            animation-delay: 4s;
+
+            @include respond(tab-land) {
+                animation-delay: 4s;
+            }
+    
+            @include respond(tab-port) {
+                animation-delay: 4s;
+            }
+    
+            @include respond(phone) {
+                animation-delay: 7s;
+            }
+        }
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
+
+@keyframes marqueePhone {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-200%, 0);
+    }
+}
