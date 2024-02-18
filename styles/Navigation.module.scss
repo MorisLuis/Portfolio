@@ -1,8 +1,11 @@
+@import "./main.scss";
+
 .footer {
     position: relative;
     overflow: hidden;
-    color: #F9CDCD;
+    color: $text-color-secondary;
     padding: 2em;
+    
 
     .background_noiseFooter {
         position: absolute;
@@ -21,59 +24,19 @@
             height: calc(100% + 20em);
             animation: noise-animation 1s infinite;
             background-image: url('../public/noise.png');
-            background-color: #262523;
+            background-color: $background-color-secondary;
             background-position: 50%;
             content: "";
             will-change: transform;
             pointer-events: none;
         }
     }
-
-
 }
 
-@keyframes noise-animation {
-    0% {
-        transform: translate3d(0, 9em, 0);
-    }
+.header{
+    //position: relative;
+    height: 20px;
+    background-color: $color-purple;
+    text-align: center;
 
-    10% {
-        transform: translate3d(-1em, -4em, 0);
-    }
-
-    20% {
-        transform: translate3d(-8em, 2em, 0);
-    }
-
-    30% {
-        transform: translate3d(9em, -9em, 0);
-    }
-
-    40% {
-        transform: translate3d(-2em, 7em, 0);
-    }
-
-    50% {
-        transform: translate3d(-9em, -4em, 0);
-    }
-
-    60% {
-        transform: translate3d(2em, 6em, 0);
-    }
-
-    70% {
-        transform: translate3d(7em, -8em, 0);
-    }
-
-    80% {
-        transform: translate3d(-9em, 1em, 0);
-    }
-
-    90% {
-        transform: translate3d(6em, -5em, 0);
-    }
-
-    100% {
-        transform: translate3d(-7em, 0, 0);
-    }
 }

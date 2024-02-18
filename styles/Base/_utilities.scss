@@ -1,5 +1,4 @@
-
-.none{
+.none {
     display: none;
 }
 
@@ -28,11 +27,11 @@
         justify-content: space-between;
     }
 
-    &.column{
+    &.column {
         flex-direction: column;
     }
 
-    &.row{
+    &.row {
         flex-direction: row;
     }
 }
@@ -59,23 +58,23 @@
     }
 }
 
-.m-right{
+.m-right {
     margin-right: 1em;
 }
 
-.m-left{
+.m-left {
     margin-left: 0.75em;
 }
 
-.disabled{
+.disabled {
     opacity: 50%;
 }
 
-.rotate45{
+.rotate45 {
     rotate: 45deg;
 }
 
-.rotate180{
+.rotate180 {
     rotate: 180deg;
 }
 
@@ -85,9 +84,35 @@
 }
 
 
-.divider{
+.divider {
     width: 100%;
     height: 1px;
     background-color: $color-border;
     margin: 3em 0em;
+}
+
+//noise
+.background-noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.background-noise::after {
+    position: fixed;
+    top: -10em;
+    left: -10em;
+    width: calc(100% + 20em);
+    height: calc(100% + 20em);
+    animation: noise-animation 1s infinite;
+    background-image: url('../../public/noise.png');
+    background-color: $background-color;
+    background-position: 50%;
+    content: "";
+    will-change: transform;
+    pointer-events: none;
 }
