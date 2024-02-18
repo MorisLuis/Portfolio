@@ -1,5 +1,5 @@
-import Image from "next/image";
 import styles from "../styles/Home.module.scss";
+import { ProjectStructure } from "./projectStructure";
 
 
 export default function Home() {
@@ -18,14 +18,12 @@ export default function Home() {
             className={styles.video}
             autoPlay
             muted
-            
             preload="none"
           >
             <source src="./video1.mp4" />
           </video>
         </div>
       </div>
-
 
       <div className={styles.marqueeContainer}>
         <div className={styles.marquee}>
@@ -35,6 +33,10 @@ export default function Home() {
           <span>You probably need a software agency.&nbsp;&nbsp;&nbsp;</span>
         </div>
       </div>
+
+      <ProjectStructure/>
+      <ProjectStructure/>
+      <ProjectStructure/>
     </main>
   );
 }

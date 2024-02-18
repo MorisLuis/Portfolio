@@ -1,10 +1,8 @@
 @import "./main.scss";
 
 .home {
-    height: 100%;
     display: block;
-    
-    
+
     .introduction {
         height: 100vh;
         overflow: hidden;
@@ -144,5 +142,76 @@
 
     100% {
         transform: translate(-200%, 0);
+    }
+}
+
+.ProjectStructure{
+    padding: 20vh 20rem;
+
+    @include respond(tab-land) {
+        padding: 20vh 7.5rem;
+    }
+
+    @include respond(tab-port) {
+        padding: 20vh 5rem;
+    }
+
+    @include respond(phone) {
+        height: 130vh;
+        padding: 20vh 1rem;
+    }
+
+    .title{
+        padding: 1em 0em;
+        font-family: "HedvigLettersSerif";
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .paragraph{
+        width: 50%;
+        padding-bottom: 1em;
+
+        @include respond(tab-port) {
+            width: 80%;
+        }
+
+        @include respond(phone) {
+            width: 80%;
+        }
+    }
+
+    .link{
+        color: rgb(191, 58, 191);
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        padding-bottom: 2em;
+
+        p{
+            margin-right: 10px;
+        }
+
+        svg{
+            width: 14px;
+            height: 14px;
+        }
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+    .videoContainer {
+        max-width: 800px;
+        padding: 0px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        .video {
+            width: 100%;
+            z-index: 1;
+            border-radius: 5px;
+        }
     }
 }

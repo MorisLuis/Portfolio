@@ -1,0 +1,79 @@
+.footer {
+    position: relative;
+    overflow: hidden;
+    color: #F9CDCD;
+    padding: 2em;
+
+    .background_noiseFooter {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+
+        &::after {
+            position: absolute;
+            top: -10em;
+            left: -10em;
+            width: calc(100% + 20em);
+            height: calc(100% + 20em);
+            animation: noise-animation 1s infinite;
+            background-image: url('../public/noise.png');
+            background-color: #262523;
+            background-position: 50%;
+            content: "";
+            will-change: transform;
+            pointer-events: none;
+        }
+    }
+
+
+}
+
+@keyframes noise-animation {
+    0% {
+        transform: translate3d(0, 9em, 0);
+    }
+
+    10% {
+        transform: translate3d(-1em, -4em, 0);
+    }
+
+    20% {
+        transform: translate3d(-8em, 2em, 0);
+    }
+
+    30% {
+        transform: translate3d(9em, -9em, 0);
+    }
+
+    40% {
+        transform: translate3d(-2em, 7em, 0);
+    }
+
+    50% {
+        transform: translate3d(-9em, -4em, 0);
+    }
+
+    60% {
+        transform: translate3d(2em, 6em, 0);
+    }
+
+    70% {
+        transform: translate3d(7em, -8em, 0);
+    }
+
+    80% {
+        transform: translate3d(-9em, 1em, 0);
+    }
+
+    90% {
+        transform: translate3d(6em, -5em, 0);
+    }
+
+    100% {
+        transform: translate3d(-7em, 0, 0);
+    }
+}
