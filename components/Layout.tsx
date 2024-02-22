@@ -13,7 +13,7 @@ export const Layout = ({
         <>
             <div className="background-noise"></div>
 
-            <Header />
+            {/* <Header /> */}
 
             <div>
                 {children}

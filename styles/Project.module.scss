@@ -1,0 +1,51 @@
+@import "./main.scss";
+
+.ProjectDetails{
+    min-height: 100vh;
+    width: 100%;
+    padding: 20vh 16rem;
+
+    @include respond(tab-land) {
+        padding: 20vh 7.5rem;
+    }
+
+    @include respond(tab-port) {
+        padding: 20vh 5rem;
+    }
+
+    @include respond(phone) {
+        height: 130vh;
+        padding: 20vh 1rem;
+    }
+
+
+    .header{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        margin-bottom: 1em;
+
+        .title{
+            font-family: "HedvigLettersSerif";
+            font-weight: bold;
+        }
+
+        .brief{
+            width: 80%;
+        }
+    }
+
+    .videoHeader {
+        //max-width: 800px;
+        padding: 0px;
+        box-sizing: border-box;
+
+        .video {
+            width: 100%;
+            z-index: 1;
+            border-radius: 5px;
+        }
+    }
+
+}

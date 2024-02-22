@@ -110,7 +110,9 @@
     height: calc(100% + 20em);
     animation: noise-animation 1s infinite;
     background-image: url('../../public/noise.png');
+    //background-color: #D04848;
     background-color: $background-color;
+
     background-position: 50%;
     content: "";
     will-change: transform;
