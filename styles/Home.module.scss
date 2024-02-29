@@ -3,25 +3,50 @@
 .home {
     display: block;
 
+    .header{
+        position: sticky;
+        top: 0px;
+        z-index: 2;
+        margin-top: 20vh;
+        padding: 1em 16rem 0em 16rem;
+
+        .title{
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        @include respond(tab-land) {
+            padding: 1em 7.5rem 0vh 7.5rem;
+        }
+
+        @include respond(tab-port) {
+            padding: 1em 5rem 0vh 5rem;
+        }
+
+        @include respond(phone) {
+            padding: 1em 1rem 0vh 1rem;
+        }    
+    }
+
     .introduction {
         height: 100vh;
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        padding: 20vh 16rem;
+        padding: 0px 16rem 20vh 16rem;
         min-height: 100%;
 
         @include respond(tab-land) {
-            padding: 20vh 7.5rem;
+            padding: 0px 7.5rem 20vh 7.5rem;
         }
 
         @include respond(tab-port) {
-            padding: 20vh 5rem;
+            padding: 0px 5rem 20vh 5rem;
         }
 
         @include respond(phone) {
             height: 130vh;
-            padding: 20vh 1rem;
+            padding: 0px 1rem 20vh 1rem;
         }
 
         .banner {

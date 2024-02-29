@@ -1,5 +1,4 @@
 import React from 'react'
-import { Header } from './navigation/Header'
 import { Footer } from './navigation/Footer';
 
 interface LayoutInterface {
@@ -13,13 +12,13 @@ export const Layout = ({
         <>
             <div className="background-noise"></div>
 
-            {/* <Header /> */}
 
-            <div>
+            {/* This style make my header "sticky" */}
+            <div style={{ height: "100%" }}>
                 {children}
+                <Footer />
             </div>
 
-            <Footer />
         </>
     )
 }

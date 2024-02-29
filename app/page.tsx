@@ -1,16 +1,21 @@
 import React from 'react';
-import { ProjectsDetails } from "@/database/ProjectDetails";
 import styles from "../styles/Home.module.scss";
 import { ProjectStructure } from "./projectStructure";
+import { ProjectsDetails } from "@/database/ProjectDetails";
 
 
 export default function Home() {
 
   return (
     <main className={styles.home}>
+
+      <div className={styles.header}>
+        <p className={styles.title}>MORADO</p>
+      </div>
+
+
       <div className={styles.introduction}>
         <div className={styles.banner}>
-          <p className={styles.title}>MORADO</p>
           <p className={styles.subtitle}>You probably need a software team.</p>
           <p>You want your brand to stand out.</p><br />
           <p>In a world where AI is making every company feel the same, you dream of a brand that’s so well-loved it becomes a part of daily conversations, effortlessly moving from smartphone screens to lively discussions at dinner tables everywhere.</p><br />
