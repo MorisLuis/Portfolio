@@ -9,10 +9,32 @@
         z-index: 2;
         margin-top: 20vh;
         padding: 1em 16rem 0em 16rem;
+        display: flex;
+        align-items: center;
 
         .title{
             font-weight: bold;
             font-size: 20px;
+            margin-right: 5px;
+        }
+
+        .arrow{
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+            border: 1px solid $color-border;
+
+            svg{
+                width: 14px;
+                height: 14px;
+            }
+
+            &:hover{
+                background-color: $color-primary;
+            }
         }
 
         @include respond(tab-land) {

@@ -3,6 +3,7 @@ import styles from "../../../styles/Project.module.scss";
 import { ImageLeftAndText } from '@/components/renders/ImageLeftAndText';
 import { ImageRightAndText } from '@/components/renders/ImageRightAndText';
 import { ImageCompleteAndText } from '@/components/renders/ImageCompleteAndText';
+import { MoreProjects } from '@/components/navigation/MoreProjects';
 
 const ProjectDetails = ({ params }: { params: { id: string } }) => {
 
@@ -30,9 +31,11 @@ const ProjectDetails = ({ params }: { params: { id: string } }) => {
 
             <ImageRightAndText/>
 
+
             <ImageCompleteAndText/>
 
-            {/* <div>detalles proyecto: id: {params?.id}</div> */}
+            <MoreProjects/>
+
         </div>
     )
 }

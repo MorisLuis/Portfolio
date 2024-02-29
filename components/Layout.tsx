@@ -1,24 +1,35 @@
-import React from 'react'
+"use client"; // This is a client component 👈🏽
+
+import React, { useState } from 'react';
+
 import { Footer } from './navigation/Footer';
+import { Header } from './navigation/Header';
+import { Menu } from './navigation/Menu';
 
 interface LayoutInterface {
     children: React.ReactNode;
 }
 
-export const Layout = ({
+const Layout = ({
     children
 }: LayoutInterface) => {
+    const [openMenu, setOpenMenu] = useState(false)
+
+    const handleOpenMenu = () => {
+        setOpenMenu(!openMenu)
+    }
+
     return (
-        <>
-            <div className="background-noise"></div>
-
-
-            {/* This style make my header "sticky" */}
-            <div style={{ height: "100%" }}>
+        <html>
+            <body>
+                <div className="background-noise"></div>
+                <Header onOpenMenu={handleOpenMenu} />
                 {children}
                 <Footer />
-            </div>
-
-        </>
+                <Menu visible={openMenu} />
+            </body>
+        </html>
     )
 }
+
+export default Layout;
