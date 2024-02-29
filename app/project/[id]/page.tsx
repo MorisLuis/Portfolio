@@ -11,7 +11,7 @@ const ProjectDetails = ({ params }: { params: { id: string } }) => {
         <div className={styles.ProjectDetails}>
             <div className={styles.header}>
                 <h1 className={styles.title}>Sistema de Gestión y Control de Miembros</h1>
-                <p className={styles.brief}>In a world where AI is making every company feel the same, you dream of a brand that’s so well-loved it becomes a part of daily.</p><br />
+                <p className={styles.brief}>In a world where AI is making every company feel the same, you dream of a brand thats so well-loved it becomes a part of daily.</p><br />
 
                 <button className={`${styles.button} button tertiary`}>View Demo</button>
             </div>

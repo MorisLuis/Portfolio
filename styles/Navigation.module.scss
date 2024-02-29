@@ -10,7 +10,10 @@
         position: relative;
         flex-direction: column;
         margin-bottom: 2em;
-        padding: 5em 20rem;
+        padding: 5em 16rem;
+        font-family: "HedvigLettersSerif";
+        width: 75%;
+
 
         @include respond(tab-land) {
             padding: 5em 7.5em;
@@ -22,6 +25,8 @@
 
         @include respond(phone) {
             padding: 5em 1em;
+            width: 90%;
+
         }
 
         .title {
