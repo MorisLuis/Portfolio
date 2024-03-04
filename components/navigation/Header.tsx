@@ -20,7 +20,7 @@ export const Header = ({
       <div className={pathnameHome ? styles.header : `${styles.header} ${styles.headerNormal}`}>
         <div className={styles.content}>
           <div className={styles.topbar}>
-            <p className={styles.title}>MORADO</p>
+            <p className={!openMenu ? styles.title : `${styles.titleOpen}`}>MORADO</p>
             <div className={styles.arrow} onClick={onOpenMenu}>
               {openMenu ? closeIcon : arrowDownIcon}
             </div>

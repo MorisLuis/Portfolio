@@ -2,7 +2,7 @@
 
 .Contact{
     min-height: 100vh;
-    padding: 1em 16rem 0em 16rem;
+    padding: 10rem 16rem 0em 16rem;
     display: flex;
     flex-direction: column;
 
@@ -27,6 +27,45 @@
 
         .messageAction{
             font-size: 20px;
+        }
+    }
+
+    .content{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+
+        @include respond(phone) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .contactItem{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid $color-border-tertiary;
+            padding: 1em;
+            height: 150px;
+
+            &:hover{
+                cursor: pointer;
+                text-decoration: underline;
+            }
+
+            .top{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                :nth-child(2){
+                    rotate: 45grad;
+                }
+
+                svg{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
         }
     }
 }

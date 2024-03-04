@@ -91,6 +91,10 @@
     z-index: 10;
     padding: 1em 16rem 0em 16rem;
 
+    &.headerNormal {
+        margin-top: 0px;
+    }
+
     .content{
         position: relative;
         height: 100%;
@@ -101,9 +105,18 @@
             align-items: center;
             display: flex;
             position: relative;
-
+            padding-bottom: 1em;
             
             .title {
+                font-weight: bold;
+                font-size: 20px;
+                margin-right: 5px;
+                position: relative;
+                z-index: 9;
+            }
+
+            .titleOpen{
+                color: $text-color-tertiary;
                 font-weight: bold;
                 font-size: 20px;
                 margin-right: 5px;
@@ -145,11 +158,6 @@
         backdrop-filter: blur(2px);
         background-color: rgba(0, 0, 0, 0.7);
     }
-
-    &.headerNormal {
-        margin-top: 0px;
-    }
-
 
     @include respond(tab-land) {
         padding: 1em 7.5rem 0vh 7.5rem;
