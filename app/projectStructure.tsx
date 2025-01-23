@@ -1,29 +1,59 @@
 import React from 'react';
-import styles from "../styles/Home.module.scss";
-import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRightLong, faCirclePlay } from '@fortawesome/free-solid-svg-icons';
+import { ProjectInterface } from './page';
+import styles from "../styles/Home.module.scss";
 
-export const ProjectStructure = ({project}: any) => {
+interface ProjectStructureInterface {
+    openVideo: () => void;
+    project: ProjectInterface
+    onSelectVideo: (arg: ProjectInterface) => void;
+}
+
+export const ProjectStructure = ({ onSelectVideo, openVideo, project }: ProjectStructureInterface) => {
     return (
         <div className={styles.ProjectStructure}>
-            <h2 className={styles.title}>Switch between accounts in one click.</h2>
-            <p className={styles.paragraph}>Easily switch between test accounts using Profiles and Spaces — with different histories, passwords, and browsing data.</p>
-            <Link
-                href={`/project/${project.path}`}
-                className={styles.link}
+            <div className={styles.Information}>
+                <h2 className={styles.title}>{project.name}</h2>
+                <p className={styles.paragraph}>{project.details}</p>
+
+                {
+                    project.link === 'private' ?
+                        <div>
+                            <p>Privado</p>
+                        </div>
+                        :
+                        <div className={styles.link}>
+                            <a href={project.link} target="_blank" rel="noopener noreferrer">Abrir enlace externo</a>
+                            <FontAwesomeIcon icon={faArrowRightLong} />
+                        </div>
+                }
+
+                <div
+                    className={styles.videoStart}
+                    onClick={() => {
+                        onSelectVideo(project);
+                        openVideo()
+                    }}
+                >
+                    <FontAwesomeIcon icon={faCirclePlay} className={styles.icon} />
+                    <p>See video</p>
+                </div>
+            </div>
+
+            <div 
+            //className={styles.videoContainer}
+            className={project.orientation === 'Vertical' ? `${styles.vertical}` : styles.videoContainer}
+
             >
-                <p>See project</p>
-                <FontAwesomeIcon icon={faArrowRightLong} />
-            </Link>
-            <div className={styles.videoContainer}>
                 <video
+                    //className={project.orientation === 'Vertical' ? `${styles.video} ${styles.vertical}` : styles.video}
                     className={styles.video}
                     autoPlay
                     muted
                     preload="none"
                 >
-                    <source src="./video1.mp4" />
+                    <source src={`./${project.video}`} />
                 </video>
             </div>
         </div>

@@ -85,11 +85,10 @@
 .header {
     position: sticky;
     top: 0px;
-    margin-top: 20vh;
-    padding: 1em 16rem 0em 16rem;
     align-items: center;
     z-index: 10;
-    padding: 1em 16rem 0em 16rem;
+    padding: 1em 8rem 0em 8rem;
+
 
     &.headerNormal {
         margin-top: 0px;
@@ -160,16 +159,9 @@
     }
 
     @include respond(tab-land) {
-        padding: 1em 7.5rem 0vh 7.5rem;
+        padding: 1rem;
     }
 
-    @include respond(tab-port) {
-        padding: 1em 5rem 0vh 5rem;
-    }
-
-    @include respond(phone) {
-        padding: 1em 1rem 0vh 1rem;
-    }
 }
 
 .menu {
@@ -196,6 +188,7 @@
                 text-decoration: underline;
             }
         }
+
 
         .projects {
 

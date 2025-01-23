@@ -5,7 +5,6 @@ import { usePathname } from 'next/navigation';
 
 import { Footer } from './navigation/Footer';
 import { Header } from './navigation/Header';
-import { Menu } from './navigation/Menu';
 
 interface LayoutInterface {
     children: React.ReactNode;
@@ -19,7 +18,7 @@ const Layout = ({
 
     const handleOpenMenu = () => {
         setOpenMenu(!openMenu)
-    }
+    };
 
     useEffect(() => {
         setOpenMenu(false)

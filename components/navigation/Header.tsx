@@ -1,7 +1,6 @@
 import React from 'react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import styles from "../../styles/Navigation.module.scss";
-import { Menu } from './Menu';
 
 interface HeaderInterface {
   onOpenMenu: () => void,
@@ -13,26 +12,27 @@ export const Header = ({
 }: HeaderInterface) => {
 
   const pathname = usePathname()
-  const pathnameHome = pathname === '/'
+  const pathnameHome = pathname === '/';
+  const { push } = useRouter()
 
   return (
     <>
       <div className={pathnameHome ? styles.header : `${styles.header} ${styles.headerNormal}`}>
         <div className={styles.content}>
           <div className={styles.topbar}>
-            <p className={!openMenu ? styles.title : `${styles.titleOpen}`}>MORADO</p>
-            <div className={styles.arrow} onClick={onOpenMenu}>
+            <p className={!openMenu ? styles.title : `${styles.titleOpen}`} onClick={() => push('/')}>MORADO</p>
+            {/* <div className={styles.arrow} onClick={onOpenMenu}>
               {openMenu ? closeIcon : arrowDownIcon}
-            </div>
+            </div> */}
           </div>
 
-          {
+          {/* {
             openMenu &&
             <div style={{position: 'relative'}}>
               <div className={styles.background}></div>
               <Menu/>
             </div>
-          }
+          } */}
         </div>
       </div>
     </>

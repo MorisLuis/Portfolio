@@ -19,6 +19,7 @@ $text-color-tertiary:#f1f1f1;
 
 $background-color: white;
 $background-color-secondary: #262523;
+$box-shadow-modal:  rgba(0, 0, 0, 0.1) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 
 
 .dark {
@@ -33,6 +34,11 @@ $background-color-secondary: #262523;
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+//Padding
+$padding: 1em;
+$padding-horizontal: 1em;
+$padding-bottom: 1em;
+$padding-top: 1em;
 
 //Font-size
 $font-big: 60px;
@@ -45,3 +51,7 @@ $font-sm: 10px;
 //Phone
 $font-normal-phone: 16px;
 $font-sm-phone: 14px;
+
+//UI
+$border-radius: 6px;
+$gap: 10px;
