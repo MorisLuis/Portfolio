@@ -42,18 +42,18 @@ export const ProjectStructure = ({ onSelectVideo, openVideo, project }: ProjectS
             </div>
 
             <div 
-            //className={styles.videoContainer}
             className={project.orientation === 'Vertical' ? `${styles.vertical}` : styles.videoContainer}
 
             >
                 <video
-                    //className={project.orientation === 'Vertical' ? `${styles.video} ${styles.vertical}` : styles.video}
                     className={styles.video}
                     autoPlay
                     muted
                     preload="none"
                 >
-                    <source src={`./${project.video}`} />
+                    {/* <source src={`./${project.video}`} /> */}
+                    <source src="/mapasac-inventario.mp4" type="video/mp4" />
+
                 </video>
             </div>
         </div>
