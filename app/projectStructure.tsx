@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRightLong, faCirclePlay } from '@fortawesome/free-solid-svg-icons';
 import { ProjectInterface } from './page';
 import styles from "../styles/Home.module.scss";
+import Player from '@vimeo/player';
 
 interface ProjectStructureInterface {
     openVideo: () => void;
@@ -41,23 +42,40 @@ export const ProjectStructure = ({ onSelectVideo, openVideo, project }: ProjectS
                 </div>
             </div>
 
-            {VimeoPlayer(project)}
+            <video
+                width="100%"
+                autoPlay
+                loop
+                muted
+                className={project?.orientation === 'Vertical' ? styles.videoContainer__vertical : styles.videoContainer}
+            >
+                <source src={project.video} type="video/mp4" />
+            </video>
         </div>
     )
 }
 
 
-const VimeoPlayer = (projectSelected: ProjectInterface) => {
+const VimeoPlayer = ({ videoId }: { videoId: number }) => {
+    const playerRef = useRef<HTMLDivElement>(null);
 
-    return (
-        <div className={styles.videoWrapper}>
-            <div className={projectSelected?.orientation === 'Vertical' ? styles.videoContainer__vertical : styles.videoContainer}>
-                <iframe
-                    src={`https://player.vimeo.com/video/${projectSelected.video}?title=0&byline=0&portrait=0&badge=0&player_id=0&app_id=58479&autoplay=1&loop=1&controls=0`}
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                    title="mapasac-ventas"
-                ></iframe>
-            </div>
-        </div>
-    );
+    useEffect(() => {
+        if (playerRef.current) {
+            const player = new Player(playerRef.current, {
+                id: videoId,
+                autoplay: true,
+                loop: true,
+                muted: true,
+                controls: false,
+            });
+
+            player.play().catch(() => {
+                console.warn(`Video ${videoId} no pudo reproducirse automáticamente.`);
+            });
+        }
+    }, [videoId]);
+
+    return <div ref={playerRef} className={styles.videoWrapper}></div>;
 };
+
+export default VimeoPlayer;

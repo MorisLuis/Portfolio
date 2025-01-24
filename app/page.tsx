@@ -7,7 +7,7 @@ import { Modal } from '@/components/Modal';
 
 export interface ProjectInterface {
   name: string;
-  video: number;
+  video: string;
   details: string;
   link: string;
   id: number;
@@ -17,7 +17,7 @@ export interface ProjectInterface {
 const Projects: ProjectInterface[] = [
   {
     name: 'SICRE',
-    video: 1049887339,
+    video: '/Sicre.mp4',
     details: 'CRM',
     link: 'private',
     id: 1,
@@ -25,16 +25,15 @@ const Projects: ProjectInterface[] = [
   },
   {
     name: 'Olei Software',
-    video: 1049875020,
+    video: '/OleiSoftware.mp4',
     details: 'Retail, E-Commerce',
     link: 'https://www.oleionline.com/login',
     id: 2,
     orientation: 'Horizontal'
-
   },
   {
     name: 'Olei CRM',
-    video: 1049887362,
+    video: '/OleiCRM.mp4',
     details: 'Retail, E-Commerce',
     link: 'private',
     id: 3,
@@ -42,7 +41,7 @@ const Projects: ProjectInterface[] = [
   },
   {
     name: 'Mapasac',
-    video: 1049887393,
+    video: '/mapasac-inventario.mp4',
     details: 'Retail, E-Commerce',
     link: 'private',
     id: 4,
@@ -84,11 +83,15 @@ export default function Home() {
       >
         <div className={styles.ProjectModal}>
           <div className={projectSelected?.orientation === 'Vertical' ? styles.VerticalModal : styles.videoContainer}>
-            <iframe
-              src={`https://player.vimeo.com/video/${projectSelected?.video}?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479`}
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-              title="mapasac-ventas"
-            />
+            <video
+              width="100%"
+              autoPlay
+              loop
+              muted
+              controls
+            >
+              <source src={projectSelected?.video} type="video/mp4" />
+            </video>
           </div>
         </div>
       </Modal>
