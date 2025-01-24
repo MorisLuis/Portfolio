@@ -53,11 +53,10 @@ const VimeoPlayer = (projectSelected: ProjectInterface) => {
         <div className={styles.videoWrapper}>
             <div className={projectSelected?.orientation === 'Vertical' ? styles.videoContainer__vertical : styles.videoContainer}>
                 <iframe
-                    src={`https://player.vimeo.com/video/${projectSelected.video}?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&controls=0`}
+                    src={`https://player.vimeo.com/video/${projectSelected.video}?title=0&byline=0&portrait=0&badge=0&player_id=0&app_id=58479&autoplay=1&loop=1&controls=0`}
                     allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
                     title="mapasac-ventas"
                 ></iframe>
-
             </div>
         </div>
     );
