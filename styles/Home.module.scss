@@ -22,7 +22,7 @@
     position: relative;
 
     .Information {
-        text-align: end;
+        text-align: flex-end;
         padding: 0px 1rem;
         position: absolute;
         right: 100%;
@@ -45,7 +45,7 @@
         .paragraph {
             display: flex;
             width: 100%;
-            justify-content: end;
+            justify-content: flex-end;
 
             @include respond(tab-land) {
                 justify-content: start;
@@ -58,7 +58,7 @@
             font-weight: bold;
             display: flex;
             width: 100%;
-            justify-content: end;
+            justify-content: flex-end;
             align-items: center;
             cursor: pointer;
 
@@ -82,7 +82,7 @@
             font-weight: bold;
             display: flex;
             width: 100%;
-            justify-content: end;
+            justify-content: flex-end;
             align-items: center;
             margin-bottom: 10px;
             cursor: pointer;

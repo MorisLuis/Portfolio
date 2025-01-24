@@ -90,10 +90,12 @@ export default function Home() {
   };
 
 
+  console.log({ projectSelected })
   const currentVideo = projectSelected?.moreVideos
     ? projectSelected.moreVideos[sliderVideos]
     : projectSelected?.video;
 
+  const sliderVisible = projectSelected?.moreVideos
 
 
   return (
@@ -123,10 +125,10 @@ export default function Home() {
         transparent={projectSelected?.orientation === 'Vertical'}
       >
         <div className={styles.ProjectModal}>
-          <div className={`${styles.slide} ${styles.left}`} onClick={handleBackVideo}>
+          {sliderVisible && <div className={`${styles.slide} ${styles.left}`} onClick={handleBackVideo}>
             <FontAwesomeIcon icon={faCaretLeft} />
           </div>
-
+}
           <div className={projectSelected?.orientation === 'Vertical' ? styles.VerticalModal : styles.videoContainer}>
             <iframe
               src={`https://player.vimeo.com/video/${currentVideo}?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479`}
@@ -135,9 +137,9 @@ export default function Home() {
             />
           </div>
 
-          <div className={`${styles.slide} ${styles.right}`} onClick={handleNextVideo}>
+          {sliderVisible && <div className={`${styles.slide} ${styles.right}`} onClick={handleNextVideo}>
             <FontAwesomeIcon icon={faCaretRight} />
-          </div>
+          </div>}
         </div>
       </Modal>
     </main>

@@ -4,6 +4,7 @@ import { faArrowRightLong, faCirclePlay } from '@fortawesome/free-solid-svg-icon
 import { ProjectInterface } from './page';
 import styles from "../styles/Home.module.scss";
 import Player from '@vimeo/player';
+import Image from 'next/image';
 
 interface ProjectStructureInterface {
     openVideo: () => void;
@@ -45,11 +46,13 @@ export const ProjectStructure = ({ onSelectVideo, openVideo, project }: ProjectS
             <div
                 className={styles.videoWrapper}
             >
-                <img
+                <Image
                     onClick={() => {
                         onSelectVideo(project);
                         openVideo()
                     }}
+                    width={300}
+                    height={300}
                     src={project.gif}
                     alt="Descripción del GIF"
                     className={project?.orientation === 'Vertical' ? styles.videoContainer__vertical : styles.videoContainer}
