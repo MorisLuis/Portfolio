@@ -1,9 +1,12 @@
 "use client"
 
 import React, { useState } from 'react';
-import styles from "../styles/Home.module.scss";
 import { ProjectStructure } from "./projectStructure";
 import { Modal } from '@/components/Modal';
+import styles from "../styles/Home.module.scss";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCaretRight, faCaretLeft } from '@fortawesome/free-solid-svg-icons';
+import { useSetState } from 'react-use';
 
 export interface ProjectInterface {
   name: string;
@@ -12,7 +15,8 @@ export interface ProjectInterface {
   link: string;
   id: number;
   orientation: "Vertical" | "Horizontal",
-  gif: string
+  gif: string;
+  moreVideos?: number[]
 }
 
 
@@ -51,7 +55,12 @@ const Projects: ProjectInterface[] = [
     link: 'private',
     id: 4,
     orientation: 'Vertical',
-    gif: '/mapasac-restaurantes.gif'
+    gif: '/mapasac-restaurantes.gif',
+    moreVideos: [
+      1050103254,
+      1049938083,
+      1050104581
+    ]
   }
 ]
 
@@ -59,11 +68,33 @@ const Projects: ProjectInterface[] = [
 export default function Home() {
 
   const [videoOpen, setVideoOpen] = useState(false);
-  const [projectSelected, setProjectSelected] = useState<ProjectInterface>()
+  const [projectSelected, setProjectSelected] = useState<ProjectInterface>();
+  const [sliderVideos, setSliderVideos] = useState<number>(0)
 
   const onclose = () => {
     setVideoOpen(false)
   }
+
+  const handleNextVideo = () => {
+    const moreVideos = projectSelected?.moreVideos;
+    if (!moreVideos) return;
+
+    setSliderVideos((prevIndex) => (prevIndex + 1) % moreVideos.length);
+  };
+
+  const handleBackVideo = () => {
+    const moreVideos = projectSelected?.moreVideos;
+    if (!moreVideos) return;
+
+    setSliderVideos((prevIndex) => (prevIndex - 1 + moreVideos.length) % moreVideos.length);
+  };
+
+
+  const currentVideo = projectSelected?.moreVideos
+    ? projectSelected.moreVideos[sliderVideos]
+    : projectSelected?.video;
+
+
 
   return (
     <main className={styles.home}>
@@ -75,12 +106,16 @@ export default function Home() {
               project={project}
               key={project.id}
               openVideo={() => setVideoOpen(true)}
-              onSelectVideo={(product: ProjectInterface) => setProjectSelected(product)}
+              onSelectVideo={(product: ProjectInterface) => {
+                setProjectSelected(product)
+                if (product.moreVideos) {
+                  setSliderVideos(0)
+                }
+              }}
             />
           )
         }
       </div>
-
 
       <Modal
         handleClose={onclose}
@@ -88,12 +123,20 @@ export default function Home() {
         transparent={projectSelected?.orientation === 'Vertical'}
       >
         <div className={styles.ProjectModal}>
+          <div className={`${styles.slide} ${styles.left}`} onClick={handleBackVideo}>
+            <FontAwesomeIcon icon={faCaretLeft} />
+          </div>
+
           <div className={projectSelected?.orientation === 'Vertical' ? styles.VerticalModal : styles.videoContainer}>
             <iframe
-              src={`https://player.vimeo.com/video/${projectSelected?.video}?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479`}
+              src={`https://player.vimeo.com/video/${currentVideo}?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479`}
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
               title="mapasac-ventas"
             />
+          </div>
+
+          <div className={`${styles.slide} ${styles.right}`} onClick={handleNextVideo}>
+            <FontAwesomeIcon icon={faCaretRight} />
           </div>
         </div>
       </Modal>

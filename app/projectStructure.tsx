@@ -46,6 +46,10 @@ export const ProjectStructure = ({ onSelectVideo, openVideo, project }: ProjectS
                 className={styles.videoWrapper}
             >
                 <img
+                    onClick={() => {
+                        onSelectVideo(project);
+                        openVideo()
+                    }}
                     src={project.gif}
                     alt="Descripción del GIF"
                     className={project?.orientation === 'Vertical' ? styles.videoContainer__vertical : styles.videoContainer}
