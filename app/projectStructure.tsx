@@ -41,21 +41,23 @@ export const ProjectStructure = ({ onSelectVideo, openVideo, project }: ProjectS
                 </div>
             </div>
 
-            <div 
-            className={project.orientation === 'Vertical' ? `${styles.vertical}` : styles.videoContainer}
-
-            >
-                <video
-                    className={styles.video}
-                    autoPlay
-                    muted
-                    preload="none"
-                >
-                    {/* <source src={`./${project.video}`} /> */}
-                    <source src="/mapasac-inventario.mp4" type="video/mp4" />
-
-                </video>
-            </div>
+            {VimeoPlayer(project.video)}
         </div>
     )
 }
+
+
+const VimeoPlayer = (video: number) => {
+
+    return (
+        <div className={styles.videoWrapper}>
+            <div className={styles.reactPlayer}>
+                <iframe
+                    src={`https://player.vimeo.com/video/${video}?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479`}
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                    title="mapasac-ventas"
+                />
+            </div>
+        </div>
+    );
+};

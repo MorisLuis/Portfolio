@@ -1,15 +1,14 @@
 @import "./main.scss";
 
 .home {
-
-    .content{
+    .content {
         display: block;
         padding: 20vh 30rem;
-        
-        >div{
+
+        >div {
             margin-bottom: 10rem;
         }
-    
+
         @include respond(tab-land) {
             padding: 20vh 1rem;
         }
@@ -17,70 +16,11 @@
 
 }
 
-.marqueeContainer {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 40px;
-    left: 0%;
-    background-color: $background-color;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-
-    .marquee {
-        position: absolute;
-        display: block;
-        white-space: nowrap;
-        min-width: 100%;
-        height: 100%;
-
-        span {
-            display: inline-block;
-            padding-left: 100%;
-            text-align: center;
-            white-space: nowrap;
-            min-width: 100%;
-            height: 100%;
-            font-size: 16px;
-            animation: marquee 10s linear infinite;
-            display: flex;
-            align-items: center;
-
-            @include respond(tab-land) {}
-
-            @include respond(tab-port) {
-                animation: marqueePhone 12s linear infinite;
-            }
-
-            @include respond(phone) {
-                animation: marqueePhone 14s linear infinite;
-            }
-        }
-    }
-
-    .delay {
-        span {
-            animation-delay: 4s;
-
-            @include respond(tab-land) {
-                animation-delay: 4s;
-            }
-
-            @include respond(tab-port) {
-                animation-delay: 4s;
-            }
-
-            @include respond(phone) {
-                animation-delay: 7s;
-            }
-        }
-    }
-}
-
 .ProjectStructure {
     display: flex;
     position: relative;
 
-    .Information{
+    .Information {
         text-align: end;
         padding: 0px 1rem;
         position: absolute;
@@ -100,7 +40,7 @@
             font-size: 20px;
             font-weight: bold;
         }
-    
+
         .paragraph {
             display: flex;
             width: 100%;
@@ -109,9 +49,11 @@
             @include respond(tab-land) {
                 justify-content: start;
             }
-        };
+        }
 
-        .videoStart{
+        ;
+
+        .videoStart {
             font-weight: bold;
             display: flex;
             width: 100%;
@@ -123,18 +65,18 @@
                 justify-content: start;
             }
 
-    
+
             svg {
                 width: 14px;
                 height: 14px;
                 margin-right: 10px;
             }
-    
+
             &:hover {
                 text-decoration: underline;
             }
         }
-    
+
         .link {
             font-weight: bold;
             display: flex;
@@ -147,57 +89,112 @@
             a {
                 margin-right: 10px;
             }
-    
+
             svg {
                 width: 14px;
                 height: 14px;
             }
-    
+
             &:hover {
                 text-decoration: underline;
             }
         }
     }
 
-    .videoContainer {
+    .videoWrapper {
+        position: relative;
         width: 100%;
-        height: 100%;
+        aspect-ratio: 16 / 9;
+
+        .reactPlayer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+    
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: none;
+                object-fit: cover;  /* Esto aplica el efecto de 'cover' */
+            }
+        }
+    }
+    
+
+    .videoContainer {
+        width: fit-content;
+        //width: 100%;
+        //height: 70vh; // Altura fija del contenedor
         padding: 0px;
-        box-sizing: border-box;
+        //box-sizing: border-box;
         border-radius: 5px;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        display: flex;
+        position: relative; // Importante para posicionar elementos hijos
+        background-color: red;
+        width: max-content;
+
+        @include respond(tab-port) {
+            width: max-content;
+            //height: 70vh; // Altura fija del contenedor
+        }
 
         .video {
-            width: 100%;
+            width: 100%; // Ocupa todo el ancho del contenedor
+            //height: 100%; // Ocupa todo el alto del contenedor
             z-index: 1;
             border-radius: 5px;
-            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include respond(tab-port) {
+                height: 100%; // Ocupa todo el alto del contenedor
+                background-color: red;
+
+                iframe {
+                    width: 100%; // Asegúrate de que el iframe ocupe el ancho completo
+                    height: 100%; // Asegúrate de que el iframe ocupe el alto completo
+                    border: none; // Opcional, elimina bordes no deseados
+                    background-color: red;
+                }
+            }
+
         }
     }
 
-    .vertical{
+
+    .videoContainer__vertical {
         width: 100%;
-        height: 70svh;
+        height: 70vh;
         padding: 0px;
         box-sizing: border-box;
         border-radius: 5px;
         display: flex;
-        display: flex;
         justify-content: center;
+        max-height: fit-content;
 
         .video {
-            //width: 100%;
+            height: fit-content;
             z-index: 1;
             border-radius: 5px;
-            height: 100%;
-            border: 1px solid #dfdfdf
+            border: 1px solid #dfdfdf;
+            background-color: transparent;
+
+            @include respond(big-desktop) {
+                height: fit-content;
+            }
+
         }
     }
 }
 
 .ProjectModal {
-    .videoContainer {
+    /* .videoContainer {
         width: 100%;
         height: 100%;
         padding: 0px;
@@ -215,8 +212,9 @@
             border: 1px solid #dfdfdf
         }
     }
+ */
 
-    .VerticalModal{
+    /* .VerticalModal {
         width: 100%;
         height: 85svh;
         padding: 0px;
@@ -236,11 +234,11 @@
             z-index: 1;
             border-radius: 5px;
             height: 100%;
-            width: 100%;
+            //width: 100%;
 
             @include respond(phone) {
                 width: auto;
             }
         }
-    }
+    } */
 }

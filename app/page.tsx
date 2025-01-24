@@ -7,7 +7,7 @@ import { Modal } from '@/components/Modal';
 
 export interface ProjectInterface {
   name: string;
-  video: string;
+  video: number;
   details: string;
   link: string;
   id: number;
@@ -17,7 +17,7 @@ export interface ProjectInterface {
 const Projects: ProjectInterface[] = [
   {
     name: 'SICRE',
-    video: 'Sicre.mov',
+    video: 1049887339,
     details: 'CRM',
     link: 'private',
     id: 1,
@@ -25,7 +25,7 @@ const Projects: ProjectInterface[] = [
   },
   {
     name: 'Olei Software',
-    video: 'OleiSoftware.mov',
+    video: 1049875020,
     details: 'Retail, E-Commerce',
     link: 'https://www.oleionline.com/login',
     id: 2,
@@ -34,7 +34,7 @@ const Projects: ProjectInterface[] = [
   },
   {
     name: 'Olei CRM',
-    video: 'OleiCRM.mov',
+    video: 1049887362,
     details: 'Retail, E-Commerce',
     link: 'private',
     id: 3,
@@ -42,7 +42,7 @@ const Projects: ProjectInterface[] = [
   },
   {
     name: 'Mapasac',
-    video: 'mapasac-inventario.mp4',
+    video: 1049887393,
     details: 'Retail, E-Commerce',
     link: 'private',
     id: 4,
@@ -60,7 +60,6 @@ export default function Home() {
     setVideoOpen(false)
   }
 
-  console.log({ projectSelected: projectSelected?.orientation === 'Vertical' })
   return (
     <main className={styles.home}>
 
@@ -93,7 +92,7 @@ export default function Home() {
               preload="none"
               controls
             >
-              <source src={`./${projectSelected?.video}`} />
+              <source src={`${projectSelected?.video}`} />
             </video>
           </div>
         </div>
