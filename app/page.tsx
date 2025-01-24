@@ -50,7 +50,7 @@ const Projects: ProjectInterface[] = [
   },
   {
     name: 'Mapasac',
-    video: 1049938083,
+    video: 1050103254,
     details: 'Retail, E-Commerce',
     link: 'private',
     id: 4,
@@ -90,7 +90,6 @@ export default function Home() {
   };
 
 
-  console.log({ projectSelected })
   const currentVideo = projectSelected?.moreVideos
     ? projectSelected.moreVideos[sliderVideos]
     : projectSelected?.video;
@@ -128,15 +127,14 @@ export default function Home() {
           {sliderVisible && <div className={`${styles.slide} ${styles.left}`} onClick={handleBackVideo}>
             <FontAwesomeIcon icon={faCaretLeft} />
           </div>
-}
+          }
           <div className={projectSelected?.orientation === 'Vertical' ? styles.VerticalModal : styles.videoContainer}>
             <iframe
-              src={`https://player.vimeo.com/video/${currentVideo}?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479`}
+              src={`https://player.vimeo.com/video/${currentVideo}?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479dnt=1`}
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
               title="mapasac-ventas"
             />
           </div>
-
           {sliderVisible && <div className={`${styles.slide} ${styles.right}`} onClick={handleNextVideo}>
             <FontAwesomeIcon icon={faCaretRight} />
           </div>}

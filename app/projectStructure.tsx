@@ -51,6 +51,7 @@ export const ProjectStructure = ({ onSelectVideo, openVideo, project }: ProjectS
                         onSelectVideo(project);
                         openVideo()
                     }}
+                    priority
                     width={300}
                     height={300}
                     src={project.gif}
