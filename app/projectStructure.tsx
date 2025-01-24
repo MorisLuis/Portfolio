@@ -42,24 +42,15 @@ export const ProjectStructure = ({ onSelectVideo, openVideo, project }: ProjectS
                 </div>
             </div>
 
-            <img 
-            src={project.gif}
-            alt="Descripción del GIF" 
-            className={project?.orientation === 'Vertical' ? styles.videoContainer__vertical : styles.videoContainer}
-
-            />
-
-
-           {/*  <video
-                width="100%"
-                autoPlay
-                loop
-                muted
-                className={project?.orientation === 'Vertical' ? styles.videoContainer__vertical : styles.videoContainer}
+            <div
+                className={styles.videoWrapper}
             >
-                <source src={project.video} type="video/mp4" />
-            </video> */}
-            {VimeoPlayer({videoId: project.video})}
+                <img
+                    src={project.gif}
+                    alt="Descripción del GIF"
+                    className={project?.orientation === 'Vertical' ? styles.videoContainer__vertical : styles.videoContainer}
+                />
+            </div>
         </div>
     )
 }

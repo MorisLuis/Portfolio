@@ -24,7 +24,7 @@ const Projects: ProjectInterface[] = [
     link: 'private',
     id: 1,
     orientation: 'Horizontal',
-    gif: '/mapasac-restaurantes.gif'
+    gif: '/Sicre.gif'
   },
   {
     name: 'Olei Software',
@@ -33,7 +33,7 @@ const Projects: ProjectInterface[] = [
     link: 'https://www.oleionline.com/login',
     id: 2,
     orientation: 'Horizontal',
-    gif: '/mapasac-restaurantes.gif'
+    gif: '/OleiSoftware.gif'
   },
   {
     name: 'Olei CRM',
@@ -42,7 +42,7 @@ const Projects: ProjectInterface[] = [
     link: 'private',
     id: 3,
     orientation: 'Horizontal',
-    gif: '/mapasac-restaurantes.gif'
+    gif: '/OleiCRM.gif'
   },
   {
     name: 'Mapasac',
