@@ -1,6 +1,7 @@
 @import "./main.scss";
 
 .home {
+
     .content {
         display: block;
         padding: 20vh 30rem;
@@ -104,97 +105,12 @@
     .videoWrapper {
         position: relative;
         width: 100%;
-        aspect-ratio: 16 / 9;
-
-        .reactPlayer {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-
-    
-            iframe {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                border: none;
-                object-fit: cover;  /* Esto aplica el efecto de 'cover' */
-            }
-        }
+        display: flex;
+        justify-content: center;
     }
     
 
     .videoContainer {
-        width: fit-content;
-        //width: 100%;
-        //height: 70vh; // Altura fija del contenedor
-        padding: 0px;
-        //box-sizing: border-box;
-        border-radius: 5px;
-        position: relative; // Importante para posicionar elementos hijos
-        background-color: red;
-        width: max-content;
-
-        @include respond(tab-port) {
-            width: max-content;
-            //height: 70vh; // Altura fija del contenedor
-        }
-
-        .video {
-            width: 100%; // Ocupa todo el ancho del contenedor
-            //height: 100%; // Ocupa todo el alto del contenedor
-            z-index: 1;
-            border-radius: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            @include respond(tab-port) {
-                height: 100%; // Ocupa todo el alto del contenedor
-                background-color: red;
-
-                iframe {
-                    width: 100%; // Asegúrate de que el iframe ocupe el ancho completo
-                    height: 100%; // Asegúrate de que el iframe ocupe el alto completo
-                    border: none; // Opcional, elimina bordes no deseados
-                    background-color: red;
-                }
-            }
-
-        }
-    }
-
-
-    .videoContainer__vertical {
-        width: 100%;
-        height: 70vh;
-        padding: 0px;
-        box-sizing: border-box;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-        max-height: fit-content;
-
-        .video {
-            height: fit-content;
-            z-index: 1;
-            border-radius: 5px;
-            border: 1px solid #dfdfdf;
-            background-color: transparent;
-
-            @include respond(big-desktop) {
-                height: fit-content;
-            }
-
-        }
-    }
-}
-
-.ProjectModal {
-    /* .videoContainer {
         width: 100%;
         height: 100%;
         padding: 0px;
@@ -202,21 +118,69 @@
         border-radius: 5px;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         display: flex;
-        max-height: 60vh;
+        background-color: transparent;
+        position: relative;
+        aspect-ratio: 16 / 7.3;
 
-        .video {
+        iframe {
             width: 100%;
             z-index: 1;
             border-radius: 5px;
-            height: 100%;
-            border: 1px solid #dfdfdf
+            height: auto;
+            border: 0px;
+            aspect-ratio: 16 / 7.4;
         }
     }
- */
 
-    /* .VerticalModal {
+    .videoContainer__vertical {
+        width: 50%;
+        height: 100%;
+        padding: 0px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        display: flex;
+        background-color: transparent;
+        position: relative;
+        aspect-ratio: 7.4 / 16;
+
+        iframe {
+            width: 100%;
+            z-index: 1;
+            border-radius: 5px;
+            height: auto;
+            border: 0px;
+            aspect-ratio: 7.4 / 16;
+        }
+    }
+}
+
+
+.ProjectModal {
+    .videoContainer {
         width: 100%;
-        height: 85svh;
+        height: 100%;
+        padding: 0px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        display: flex;
+        background-color: transparent;
+        position: relative;
+        aspect-ratio: 16 / 7.3;
+
+        iframe {
+            width: 100%;
+            z-index: 1;
+            border-radius: 5px;
+            height: auto;
+            border: 0px;
+            aspect-ratio: 16 / 9;
+        }
+    }
+
+    .VerticalModal {
+        width: 100%;
         padding: 0px;
         box-sizing: border-box;
         border-radius: 5px;
@@ -224,21 +188,16 @@
         display: flex;
         justify-content: center;
         background-color: transparent;
+        aspect-ratio: 7.4 / 16;
+        max-height: 85vh;
 
-        @include respond(phone) {
-            height: 85vh;
-            width: auto;
-        }
-
-        .video {
+        iframe {
+            width: 100%;
             z-index: 1;
             border-radius: 5px;
-            height: 100%;
-            //width: 100%;
-
-            @include respond(phone) {
-                width: auto;
-            }
+            height: auto;
+            border: 0px;
+            aspect-ratio: 7.3 / 16;
         }
-    } */
+    }
 }
