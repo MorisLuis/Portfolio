@@ -42,7 +42,15 @@ export const ProjectStructure = ({ onSelectVideo, openVideo, project }: ProjectS
                 </div>
             </div>
 
-            <video
+            <img 
+            src={project.gif}
+            alt="Descripción del GIF" 
+            className={project?.orientation === 'Vertical' ? styles.videoContainer__vertical : styles.videoContainer}
+
+            />
+
+
+           {/*  <video
                 width="100%"
                 autoPlay
                 loop
@@ -50,7 +58,8 @@ export const ProjectStructure = ({ onSelectVideo, openVideo, project }: ProjectS
                 className={project?.orientation === 'Vertical' ? styles.videoContainer__vertical : styles.videoContainer}
             >
                 <source src={project.video} type="video/mp4" />
-            </video>
+            </video> */}
+            {VimeoPlayer({videoId: project.video})}
         </div>
     )
 }
@@ -58,7 +67,6 @@ export const ProjectStructure = ({ onSelectVideo, openVideo, project }: ProjectS
 
 const VimeoPlayer = ({ videoId }: { videoId: number }) => {
     const playerRef = useRef<HTMLDivElement>(null);
-
     useEffect(() => {
         if (playerRef.current) {
             const player = new Player(playerRef.current, {

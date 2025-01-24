@@ -7,45 +7,51 @@ import { Modal } from '@/components/Modal';
 
 export interface ProjectInterface {
   name: string;
-  video: string;
+  video: number;
   details: string;
   link: string;
   id: number;
-  orientation: "Vertical" | "Horizontal"
+  orientation: "Vertical" | "Horizontal",
+  gif: string
 }
+
 
 const Projects: ProjectInterface[] = [
   {
     name: 'SICRE',
-    video: '/Sicre.mp4',
+    video: 1049936890,
     details: 'CRM',
     link: 'private',
     id: 1,
-    orientation: 'Horizontal'
+    orientation: 'Horizontal',
+    gif: '/mapasac-restaurantes.gif'
   },
   {
     name: 'Olei Software',
-    video: '/OleiSoftware.mp4',
+    video: 1049936910,
     details: 'Retail, E-Commerce',
     link: 'https://www.oleionline.com/login',
     id: 2,
-    orientation: 'Horizontal'
+    orientation: 'Horizontal',
+    gif: '/mapasac-restaurantes.gif'
   },
   {
     name: 'Olei CRM',
-    video: '/OleiCRM.mp4',
+    video: 1049936897,
     details: 'Retail, E-Commerce',
     link: 'private',
     id: 3,
-    orientation: 'Horizontal'
+    orientation: 'Horizontal',
+    gif: '/mapasac-restaurantes.gif'
   },
   {
     name: 'Mapasac',
-    video: '/mapasac-inventario.mp4',
+    video: 1049938083,
     details: 'Retail, E-Commerce',
     link: 'private',
     id: 4,
-    orientation: 'Vertical'
+    orientation: 'Vertical',
+    gif: '/mapasac-restaurantes.gif'
   }
 ]
 
@@ -83,15 +89,11 @@ export default function Home() {
       >
         <div className={styles.ProjectModal}>
           <div className={projectSelected?.orientation === 'Vertical' ? styles.VerticalModal : styles.videoContainer}>
-            <video
-              width="100%"
-              autoPlay
-              loop
-              muted
-              controls
-            >
-              <source src={projectSelected?.video} type="video/mp4" />
-            </video>
+            <iframe
+              src={`https://player.vimeo.com/video/${projectSelected?.video}?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479`}
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+              title="mapasac-ventas"
+            />
           </div>
         </div>
       </Modal>
