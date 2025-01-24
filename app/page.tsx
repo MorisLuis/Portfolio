@@ -30,7 +30,7 @@ const Projects: ProjectInterface[] = [
     name: 'Olei Software',
     video: 1049936910,
     details: 'Retail, E-Commerce',
-    link: 'https://www.oleionline.com/login',
+    link: 'https://oleiweb-git-demo2-morisluis-projects.vercel.app/login',
     id: 2,
     orientation: 'Horizontal',
     gif: '/OleiSoftware.gif'
