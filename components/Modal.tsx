@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
-import styles from '../styles/Modals.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
+import styles from '../styles/Modals.module.scss';
 
 interface ModalInterface {
     visible: boolean;

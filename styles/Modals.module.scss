@@ -11,12 +11,12 @@
     left: 50%;
     top: 50%;
     max-height: 80%;
-    transform: translate(-50%, -50%);
+    animation-name: downToUp;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
 
     &.transparent{
-        background-color: transparent;
-        border: 0px;
-        width: fit-content;
+        width: max-content;
     }
 
 
@@ -31,7 +31,6 @@
     }
 
     .content {
-        //padding: $padding;
         height: 100%;
         position: relative;
 
@@ -45,8 +44,6 @@
             /* Chrome, Safari y Opera */
             display: none;
         }
-
-
 
         .close {
             position: absolute;
@@ -84,5 +81,15 @@
 
     &.closing {
         animation: fadeOut 0.3s ease-in-out forwards;
+    }
+}
+
+@keyframes downToUp {
+    from {
+        transform: translateX(-50%) translateY(100%);
+    }
+
+    to {
+        transform: translateX(-50%) translateY(-50%);
     }
 }

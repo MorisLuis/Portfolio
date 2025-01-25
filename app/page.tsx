@@ -7,6 +7,7 @@ import styles from "../styles/Home.module.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretRight, faCaretLeft } from '@fortawesome/free-solid-svg-icons';
 import { useSetState } from 'react-use';
+import image from '../public/Images/Sicre.webp'
 
 export interface ProjectInterface {
   name: string;
@@ -16,7 +17,8 @@ export interface ProjectInterface {
   id: number;
   orientation: "Vertical" | "Horizontal",
   gif: string;
-  moreVideos?: number[]
+  moreVideos?: number[];
+  webp: string;
 }
 
 
@@ -28,7 +30,8 @@ const Projects: ProjectInterface[] = [
     link: 'private',
     id: 1,
     orientation: 'Horizontal',
-    gif: '/Sicre.gif'
+    gif: '/Sicre.gif',
+    webp: '../public/Images/Sicre.webp'
   },
   {
     name: 'Olei Software',
@@ -37,7 +40,9 @@ const Projects: ProjectInterface[] = [
     link: 'https://oleiweb-git-demo2-morisluis-projects.vercel.app/login',
     id: 2,
     orientation: 'Horizontal',
-    gif: '/OleiSoftware.gif'
+    gif: '/OleiSoftware.gif',
+    webp: '../public/Images/Sicre.webp'
+
   },
   {
     name: 'Olei CRM',
@@ -46,7 +51,9 @@ const Projects: ProjectInterface[] = [
     link: 'private',
     id: 3,
     orientation: 'Horizontal',
-    gif: '/OleiCRM.gif'
+    gif: '/OleiCRM.gif',
+    webp: '../public/Images/Sicre.webp'
+
   },
   {
     name: 'Mapasac',
@@ -60,7 +67,8 @@ const Projects: ProjectInterface[] = [
       1050103254,
       1049938083,
       1050104581
-    ]
+    ],
+    webp: '../public/Images/Sicre.webp'
   }
 ]
 
@@ -133,6 +141,7 @@ export default function Home() {
               src={`https://player.vimeo.com/video/${currentVideo}?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479dnt=1`}
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
               title="mapasac-ventas"
+              loading='lazy'
             />
           </div>
           {sliderVisible && <div className={`${styles.slide} ${styles.right}`} onClick={handleNextVideo}>

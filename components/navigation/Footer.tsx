@@ -23,7 +23,6 @@ export const Footer = () => {
                 </div>
                 <div></div>
             </div>
-
             <div className={styles.background_noiseFooter}></div>
         </div>
     );
