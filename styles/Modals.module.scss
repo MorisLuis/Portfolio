@@ -12,7 +12,7 @@
     left: 50%;
     transform: translate(-50%, -50%); /* Asegura que el modal se centre */
     -webkit-transform: translate(-50%, -50%); /* Compatibilidad con Safari */
-    max-height: 80%;
+    max-height: 80vh;
     animation-name: downToUp;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
@@ -37,6 +37,26 @@
 
     /* Habilitar desplazamiento suave en Safari */
     -webkit-overflow-scrolling: touch;
+
+    .close {
+        position: absolute;
+        bottom: 102.5%;
+        right: 0px;
+        cursor: pointer;
+
+        @include respond(phone) {
+            right: 2.5%;
+        }
+
+        &:hover{
+            opacity: 50%;
+        }
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
 }
 
 .modalBackground {
