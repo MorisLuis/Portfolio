@@ -58,6 +58,7 @@ export const ProjectStructure = ({ onSelectVideo, openVideo, project }: ProjectS
                     className={project?.orientation === 'Vertical' ? styles.videoContainer__vertical : styles.videoContainer}
                     placeholder={"blur"}
                     blurDataURL={project?.webp}
+                    priority
                 />
             </div>
         </div>
