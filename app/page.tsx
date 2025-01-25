@@ -29,7 +29,7 @@ const Projects: ProjectInterface[] = [
     link: 'private',
     id: 1,
     orientation: 'Horizontal',
-    gif: 'Gif/Sicre.gif',
+    gif: '/Gif/Sicre.gif',
     webp: '../public/Images/Sicre.webp'
   },
   {
@@ -39,7 +39,7 @@ const Projects: ProjectInterface[] = [
     link: 'https://oleiweb-git-demo2-morisluis-projects.vercel.app/login',
     id: 2,
     orientation: 'Horizontal',
-    gif: 'Gif/OleiSoftware.gif',
+    gif: '/Gif/OleiSoftware.gif',
     webp: '../public/Images/Sicre.webp'
 
   },
@@ -50,7 +50,7 @@ const Projects: ProjectInterface[] = [
     link: 'private',
     id: 3,
     orientation: 'Horizontal',
-    gif: 'Gif/OleiCRM.gif',
+    gif: '/Gif/OleiCRM.gif',
     webp: '../public/Images/Sicre.webp'
 
   },
@@ -61,7 +61,7 @@ const Projects: ProjectInterface[] = [
     link: 'private',
     id: 4,
     orientation: 'Vertical',
-    gif: 'Gif/mapasac-restaurantes.gif',
+    gif: '/Gif/mapasac-restaurantes.gif',
     moreVideos: [
       1050103254,
       1049938083,

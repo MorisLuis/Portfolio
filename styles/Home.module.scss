@@ -22,7 +22,9 @@
     position: relative;
 
     .Information {
-        text-align: flex-end;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
         padding: 0px 1rem;
         position: absolute;
         right: 100%;
@@ -40,6 +42,8 @@
             font-family: "HedvigLettersSerif";
             font-size: 20px;
             font-weight: bold;
+            display: flex;
+            justify-content: flex-end;
         }
 
         .paragraph {
@@ -50,9 +54,7 @@
             @include respond(tab-land) {
                 justify-content: start;
             }
-        }
-
-        ;
+        };
 
         .videoStart {
             font-weight: bold;
@@ -76,6 +78,11 @@
             &:hover {
                 text-decoration: underline;
             }
+        }
+
+        .nolink{
+            display: flex;
+            justify-content: flex-end;
         }
 
         .link {
@@ -107,10 +114,7 @@
         width: 100%;
         display: flex;
         justify-content: center;
-
-
     }
-    
 
     .videoContainer {
         width: 100%;
@@ -122,8 +126,6 @@
         display: flex;
         background-color: transparent;
         position: relative;
-        aspect-ratio: 16 / 7.3;
-        border: 1px solid black;
         cursor: pointer;
 
         &:hover{
@@ -136,7 +138,6 @@
             border-radius: 5px;
             height: auto;
             border: 0px;
-            aspect-ratio: 16 / 7.4;
         }
     }
 
@@ -150,8 +151,6 @@
         display: flex;
         background-color: transparent;
         position: relative;
-        aspect-ratio: 7.4 / 16;
-        border:1px solid black;
         cursor: pointer;
 
         &:hover{

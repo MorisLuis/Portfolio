@@ -21,8 +21,8 @@ export const ProjectStructure = ({ onSelectVideo, openVideo, project }: ProjectS
 
                 {
                     project.link === 'private' ?
-                        <div>
-                            <p>Privado</p>
+                    <div className={styles.nolink}>
+                    <p>Privado</p>
                         </div>
                         :
                         <div className={styles.link}>
