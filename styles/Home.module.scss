@@ -247,10 +247,18 @@
 
         &.left{
             right: 110%;
+
+            @include respond(phone) {
+                right: 103%;
+            }
         }
 
         &.right{
             left: 110%;
+
+            @include respond(phone) {
+                left: 103%;
+            }
         }
     }
 }
