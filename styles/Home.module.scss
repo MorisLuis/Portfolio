@@ -215,6 +215,11 @@
         aspect-ratio: 7.4 / 16;
         max-height: 85vh;
 
+
+        @include respond(phone) {
+            max-height: 75vh;
+        }
+
         iframe {
             width: 100%;
             z-index: 1;

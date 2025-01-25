@@ -2,11 +2,11 @@
 
 .Modal {
     background-color: $background-color;
-    width: 50%;
     position: fixed;
     border-radius: $border-radius;
     border: 1px solid $color-border;
     box-shadow: $box-shadow-modal;
+    width: 50%;
     z-index: 999;
     top: 50%;
     left: 50%;
@@ -17,10 +17,6 @@
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
 
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Asegura que el contenido del modal esté centrado */
-
     &.transparent {
         width: max-content;
     }
@@ -30,7 +26,10 @@
     }
 
     @include respond(phone) {
-        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Asegura que el contenido del modal esté centrado */    
+        width: max-content;
         bottom: 0px;
         height: fit-content;
     }
