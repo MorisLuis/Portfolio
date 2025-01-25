@@ -6,8 +6,7 @@ import { Modal } from '@/components/Modal';
 import styles from "../styles/Home.module.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretRight, faCaretLeft } from '@fortawesome/free-solid-svg-icons';
-import { useSetState } from 'react-use';
-import image from '../public/Images/Sicre.webp'
+
 
 export interface ProjectInterface {
   name: string;
@@ -30,7 +29,7 @@ const Projects: ProjectInterface[] = [
     link: 'private',
     id: 1,
     orientation: 'Horizontal',
-    gif: '/Sicre.gif',
+    gif: './Gif/Sicre.gif',
     webp: '../public/Images/Sicre.webp'
   },
   {
@@ -40,7 +39,7 @@ const Projects: ProjectInterface[] = [
     link: 'https://oleiweb-git-demo2-morisluis-projects.vercel.app/login',
     id: 2,
     orientation: 'Horizontal',
-    gif: '/OleiSoftware.gif',
+    gif: './Gif/OleiSoftware.gif',
     webp: '../public/Images/Sicre.webp'
 
   },
@@ -51,7 +50,7 @@ const Projects: ProjectInterface[] = [
     link: 'private',
     id: 3,
     orientation: 'Horizontal',
-    gif: '/OleiCRM.gif',
+    gif: './Gif/OleiCRM.gif',
     webp: '../public/Images/Sicre.webp'
 
   },
@@ -62,7 +61,7 @@ const Projects: ProjectInterface[] = [
     link: 'private',
     id: 4,
     orientation: 'Vertical',
-    gif: '/mapasac-restaurantes.gif',
+    gif: './Gif/mapasac-restaurantes.gif',
     moreVideos: [
       1050103254,
       1049938083,

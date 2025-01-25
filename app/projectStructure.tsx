@@ -51,11 +51,10 @@ export const ProjectStructure = ({ onSelectVideo, openVideo, project }: ProjectS
                         onSelectVideo(project);
                         openVideo()
                     }}
-                    //priority
                     width={300}
                     height={300}
                     src={project.gif}
-                    alt="Descripción del GIF"
+                    alt={project.details}
                     className={project?.orientation === 'Vertical' ? styles.videoContainer__vertical : styles.videoContainer}
                     placeholder={"blur"}
                     blurDataURL={project?.webp}
